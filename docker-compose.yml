@@ -1,0 +1,20 @@
+services:
+  my-chat-backend: 
+    image: nodejs
+    container_name: my-chat-backend
+    restart: always
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - my-chat-backend-network
+networks:
+  my-chat-backend-networks:
+    driver: bridge
+    name: my-chat-backend-network
+
+volumes:
+  node_modules:
