@@ -21,10 +21,11 @@ app.use(cookieParser());
 // app.use(cors());
 app.use(
   cors({
-    origin: true,
+    origin: 'http://my-web-chat.s3-website-ap-southeast-2.amazonaws.com',
     credentials: true,
   })
 );
+
 
 
 app.use("/status", (req, res) => {
