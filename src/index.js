@@ -18,12 +18,12 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: process.env.NODE_ENV === "development" ? true : "http://my-web-chat.s3-website-ap-southeast-2.amazonaws.com",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: process.env.NODE_ENV === "development"
+    ? "http://localhost:5173"
+    : "http://my-web-chat.s3-website-ap-southeast-2.amazonaws.com",
+  credentials: true,
+}));
 
 
 
