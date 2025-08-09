@@ -18,13 +18,13 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors());
 app.use(
   cors({
-    origin: 'http://my-web-chat.s3-website-ap-southeast-2.amazonaws.com',
+    origin: process.env.NODE_ENV === "development" ? true : "http://my-web-chat.s3-website-ap-southeast-2.amazonaws.com",
     credentials: true,
   })
 );
+
 
 
 
